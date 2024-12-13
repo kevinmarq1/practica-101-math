@@ -1,1 +1,15 @@
+import numpy as np
+from PIL import Image
 
+# Pedir la ruta de la imagen
+ruta_imagen = input("coloca la ruta de la imagen: ")
+
+# Cargar la imagen
+imagen = Image.open(ruta_imagen)
+
+# Convertir a escala de grises
+imagen_grises = imagen.convert("L")
+
+matriz_imagen= np.array(imagen_grises)
+
+print ("imagen cargada y convertida a matriz con exito.")
