@@ -1,15 +1,20 @@
 import numpy as np
-from PIL import Image
-
-# Pedir la ruta de la imagen
-ruta_imagen = input("coloca la ruta de la imagen: ")
+import matplotlib.pyplot as plt
+from scipy import misc, datasets
+from scipy.linalg import svd
 
 # Cargar la imagen
-imagen = Image.open(ruta_imagen)
+A = datasets.face(gray=True)
 
-# Convertir a escala de grises
-imagen_grises = imagen.convert("L")
+# Mostrar la imagen A
+plt.imshow(A, cmap=plt.cm.gray)
+plt.show()
 
-matriz_imagen= np.array(imagen_grises)
+# Cargar la imagen en colores
+B = datasets.face(gray=False)
 
-print ("imagen cargada y convertida a matriz con exito.")
+# Mostrar la imagen
+plt.imshow(B)
+plt.show()
+
+
