@@ -25,9 +25,10 @@ def reconstruction(U, S, Vt):
     return np.dot(U, np.dot(S, Vt))
 
 # Función para comprimir la imagen
-def image_compression(A, n_comp):
+def image_compression(I, n_comp):
     # Paso 1: Aplicar SVD
-    U, S, Vt = svd_descomposicion(A)
+    I = imagen
+    U, S, Vt = svd_descomposicion(I)
     
     # Paso 2: Reducir la cantidad de datos
     U_reducido = U[:, :n_comp]
