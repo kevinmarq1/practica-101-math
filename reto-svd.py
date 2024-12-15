@@ -17,4 +17,14 @@ B = datasets.face(gray=False)
 plt.imshow(B)
 plt.show()
 
+def sse_score(x-x_hat):
+  return np.sum((x-x_hat)**2)
+
+def svd_descomposicion(x):
+  u,s,vt=svd(x,full_matrices=False)
+  return u,np.diag(s),vt
+  print(u)
+  print(s)
+  print(vt)
+  
 
