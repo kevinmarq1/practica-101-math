@@ -45,7 +45,7 @@ def image_compression(A, n_comp):
 
 # Ejemplo
 racoon_gray = datasets.face(gray=True)
-racoon_hat, sse = image_compression(racoon_gray, n_comp=50)
+racoon_hat_gray, sse = image_compression(racoon_gray, n_comp=50)
 print(f"Error de reconstrucción: {sse}")
 plt.imshow(racoon_hat_gray, cmap=plt.cm.gray)
 plt.show()
