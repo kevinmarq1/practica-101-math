@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 from scipy import misc, datasets
 from scipy.linalg import svd
 
-# Cargar la imagen en escala de grises
+# Cargar la imagen en escala de grises y color
 A = datasets.face(gray=True)
 B = datasets.face(gray=False)
-# Mostrar la imagen en escala de grises
+# Mostrar la imagen en escala de grises y color
 plt.imshow(A, cmap=plt.cm.gray)
 plt.show()
 plt.imshow(B)
