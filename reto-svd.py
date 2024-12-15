@@ -1,4 +1,4 @@
-pip install notebook
+!pip install notebook
 juoyter notebook
 import numpy as np
 import matplotlib.pyplot as plt
