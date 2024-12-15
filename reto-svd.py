@@ -5,11 +5,12 @@ from scipy.linalg import svd
 
 # Cargar la imagen en escala de grises
 A = datasets.face(gray=True)
-
+B = datasets.face(gray=False)
 # Mostrar la imagen en escala de grises
 plt.imshow(A, cmap=plt.cm.gray)
 plt.show()
-
+plt.imshow(B)
+plt.show()
 # Función SSE
 def sse_score(X, X_hat):
     return np.sum((X - X_hat) ** 2)
@@ -43,9 +44,16 @@ def image_compression(A, n_comp):
     return A_hat, sse
 
 # Ejemplo
-racoon = datasets.face(gray=True)
-racoon_hat, sse = image_compression(racoon, n_comp=50)
+racoon_gray = datasets.face(gray=True)
+racoon_hat, sse = image_compression(racoon_gray, n_comp=50)
 print(f"Error de reconstrucción: {sse}")
+plt.imshow(racoon_hat_gray, cmap=plt.cm.gray)
+plt.show()
+
+racoon_color =datasets.face(gray=False)
+racoon_hat_color, sse = image_compression(racoon_color, n_comp=50)
+plt.imshow(racoon_hat_color)
+plt.show()
 
   
 
